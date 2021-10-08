@@ -12,7 +12,7 @@ RUN apt-get update --yes && \
 ADD . /crfpp
 WORKDIR /crfpp
 
-RUN ./configure && \
+RUN ./configure --build=${BUILD_ARCH} \
     make && \
     make install && \
     ldconfig
