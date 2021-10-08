@@ -1,7 +1,6 @@
 FROM ubuntu:20.04
 
-ARG BUILD_ARCH=x86_64-unknown-linux-gnu 
-ENV BUILD_ARCH ${BUILD_ARCH}
+ARG BUILD_ARCH=aarch64-unknown-linux-gnu 
 
 RUN apt-get update --yes && \
     apt-get upgrade --yes && \
@@ -15,7 +14,10 @@ RUN apt-get update --yes && \
 ADD . /crfpp
 WORKDIR /crfpp
 
-RUN ./configure --build=${BUILD_ARCH} \
+ENV DISTRIB_ID=Ubuntu
+ENV DISTRIB_RELEASE=20.04
+
+RUN ./configure --build=${BUILD_ARCH}} && \
     make && \
     make install && \
     ldconfig
