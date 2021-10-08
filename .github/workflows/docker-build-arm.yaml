@@ -43,9 +43,8 @@ jobs:
       # Build
       #
       - name: build the image
-        env:
-          BUILD_ARCH: aarch64-unknown-linux-gnu
         run: |
           docker build --push --no-cache \
+            --build-arg BUILD_ARCH=aarch64-unknown-linux-gnu \
             --tag hkotel/crfpp:latest \
             --platform linux/arm64 .
