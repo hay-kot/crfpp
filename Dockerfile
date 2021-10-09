@@ -17,4 +17,4 @@ WORKDIR /crfpp
 ENV DISTRIB_ID=Ubuntu
 ENV DISTRIB_RELEASE=20.04
 
-RUN chmod +x ./docker-build.bash && ./docker-build
+RUN chmod +x ./docker-build.sh && ./docker-build.sh
