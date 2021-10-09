@@ -1,4 +1,4 @@
-name: Docker Build
+name: Docker ARM Build
 
 on:
   push:
@@ -46,5 +46,5 @@ jobs:
         run: |
           docker build --push --no-cache \
             --build-arg BUILD_ARCH=aarch64-unknown-linux-gnu \
-            --tag hkotel/crfpp:latest \
+            --tag hkotel/crfpp:latest-arm \
             --platform linux/arm64 .

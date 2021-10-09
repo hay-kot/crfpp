@@ -1,4 +1,4 @@
-name: Docker Build
+name: Docker x86 Build
 
 on:
   push:
@@ -46,5 +46,5 @@ jobs:
         run: |
           docker build --push --no-cache \
             --build-arg BUILD_ARCH=x86_64-unknown-linux-gnu \
-            --tag hkotel/crfpp:latest \
+            --tag hkotel/crfpp:latest-amd64 \
             --platform linux/amd64 .
