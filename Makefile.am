@@ -3,7 +3,7 @@ EXTRA_DIRS = doc example sdk perl python ruby java swig
 bin_PROGRAMS = crf_learn crf_test
 ACLOCAL_AMFLAGS = -I m4
 
-AUTOMAKE_OPTIONS = no-dependencies
+AUTOMAKE_OPTIONS = no-dependencies foreign
 lib_LTLIBRARIES = libcrfpp.la
 libcrfpp_la_SOURCES = crfpp.h thread.h libcrfpp.cpp lbfgs.cpp scoped_ptr.h param.cpp param.h encoder.cpp feature.cpp stream_wrapper.h \
                       feature_cache.cpp feature_index.cpp node.cpp path.cpp tagger.cpp \
