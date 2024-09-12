@@ -51,8 +51,8 @@ dnl
 dnl check gcc
 dnl
 if test -n "$GCC"; then
-   CFLAGS="-O3 -Wall";
-   CXXFLAGS="-O3 -Wall";
+   CFLAGS="-std=c99 -O3 -Wall";
+   CXXFLAGS="-std=c++98 -O3 -Wall";
 fi
 
 AC_DEFUN([ADD_CC_FLAG], [
