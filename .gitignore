@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Build directories
+/.libs/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -30,9 +33,35 @@
 *.exe
 *.out
 *.app
+/crf_learn
+/crf_test
 
 # Vim
 *~
 *.swp
 *.swo
 
+# Autotools
+/Makefile
+/Makefile.in
+/Makefile.msvc
+/aclocal.m4
+/autom4te.cache/
+/compile
+/config.guess
+/config.h
+/config.h.in
+/config.log
+/config.status
+/config.sub
+/configure
+/install-sh
+/libtool
+/ltmain.sh
+/m4/
+/missing
+/swig/version.h
+
+# Distribution packages
+*.tar.gz
+*.zip

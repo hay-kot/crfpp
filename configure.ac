@@ -1,8 +1,9 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(crf_learn.cpp)
+AC_INIT([CRF++], [0.59], [], [CRF++])
 AH_TEMPLATE([HAVE_TLS_KEYWORD], [])
 AH_TEMPLATE([HAVE_SYS_CONF_SC_NPROCESSORS_CONF], [])
-AM_INIT_AUTOMAKE(CRF++, 0.59)
+AC_CONFIG_SRCDIR([crf_learn.cpp])
+AM_INIT_AUTOMAKE
 
 dnl Checks for programs.
 AC_PROG_CC
@@ -50,11 +51,11 @@ dnl
 dnl check gcc
 dnl
 if test -n "$GCC"; then
-   CFLAGS="-O3 -Wall";
-   CXXFLAGS="-O3 -Wall";
+   CFLAGS="-std=c99 -O3 -Wall";
+   CXXFLAGS="-std=c++98 -O3 -Wall";
 fi
 
-AC_DEFUN(ADD_CC_FLAG, [
+AC_DEFUN([ADD_CC_FLAG], [
   AC_MSG_CHECKING(whether ${CC-cc} accepts $1)
   AC_LANG_SAVE
   AC_LANG_C
@@ -66,7 +67,7 @@ AC_DEFUN(ADD_CC_FLAG, [
   AC_LANG_RESTORE
 ])
 
-AC_DEFUN(ADD_CXX_FLAG, [
+AC_DEFUN([ADD_CXX_FLAG], [
   AC_MSG_CHECKING(whether ${CXX-c++} accepts $1)
   AC_LANG_SAVE
   AC_LANG_CPLUSPLUS
@@ -105,7 +106,7 @@ esac
 dnl
 dnl check C++ features
 dnl
-AC_DEFUN(CHECK_CXX_STL, [
+AC_DEFUN([CHECK_CXX_STL], [
   AC_MSG_CHECKING(if ${CXX-c++} supports stl <$1> (required))
   AC_TRY_COMPILE(
 	[
@@ -286,5 +287,6 @@ AC_MSG_RESULT([yes])
 
 AC_SUBST(datarootdir)
 AM_CONFIG_HEADER(config.h)
+AM_MAINTAINER_MODE([disable])
 AC_OUTPUT([Makefile Makefile.msvc swig/version.h])
 
