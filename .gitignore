@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Build directories
+/.libs/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -30,6 +33,8 @@
 *.exe
 *.out
 *.app
+/crf_learn
+/crf_test
 
 # Vim
 *~
